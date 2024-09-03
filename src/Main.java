@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
@@ -13,11 +15,12 @@ public class Main {
         }
         System.out.println("Введите k (точность): ");
         int k = in.nextInt();
-        Rad Calc = new Rad(x, k);
-        double res = Calc.Arctan();
+        BigDecimal LongX=new BigDecimal(x);
+        Rad Calc = new Rad(LongX, k);
+        BigDecimal res = Calc.Arctan();
         System.out.println("Мой atan = " + res + "\n");
-        double res1 = Math.atan(x);
-        System.out.println("Встроенный atan = " + res1 + "\n");
+        BigDecimal LongRes1= new BigDecimal(Math.atan(x));
+        System.out.println("Встроенный atan = " + LongRes1 + "\n");
         in.close();
     }
 }
